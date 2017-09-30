@@ -1,0 +1,33 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+
+<body>
+
+<h1>{{restaurant.name}}</h1>
+
+
+{% for i in items %}
+
+<div>
+
+<p>{{i.name}}</p>
+
+<p>{{i.description}}</p>
+
+<p> {{i.price}} </p>
+
+<a href="{{url_for('editMenuItem', restaurant_id= restaurant.id, menu_id = i.id)}}">Edit</a>
+
+</br>
+<a href="{{url_for('deleteMenuItem', restaurant_id= restaurant.id, menu_id = i.id)}}">Delete</a>
+
+
+</div>
+
+
+{% endfor %}
+</body>
+
+</html>
